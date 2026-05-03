@@ -70,10 +70,9 @@ const corsOptions = {
   origin(origin, callback) {
     if (isAllowedOrigin(origin)) {
       callback(null, true);
-      return;
+    } else {
+      callback(null, false);
     }
-
-    callback(new Error(`CORS blocked origin: ${origin}`));
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,

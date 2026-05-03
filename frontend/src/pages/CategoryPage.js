@@ -22,8 +22,8 @@ const CategoryPage = ({ mode = 'category' }) => {
         const response = await apiService.get(
           `/posts/${endpoint}/${encodeURIComponent(decodedValue)}?page=${pagination.page}&limit=${pagination.limit}`
         );
-        setPosts(response.data.posts);
-        setPagination(response.data.pagination);
+        setPosts(response.data?.posts || []);
+        setPagination(response.data?.pagination || { page: 1, pages: 1, total: 0, limit: 5 });
         setError(null);
       } catch (err) {
         setError(`Failed to fetch ${mode} posts. Please try again later.`);
