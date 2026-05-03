@@ -13,6 +13,11 @@ apiService.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
+  // Strip leading slash so Axios properly appends to the baseURL path (e.g., /api/)
+  if (config.url && config.url.startsWith('/')) {
+    config.url = config.url.substring(1);
+  }
+
   return config;
 });
 
