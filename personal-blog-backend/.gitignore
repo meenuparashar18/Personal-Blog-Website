@@ -6,7 +6,7 @@ node_modules/
 
 # System files
 .DS_Store/
-Thumbs.db
+Thumbs.db/
 
 # Log files (Agar project me logs bante hain toh)
 logs/
