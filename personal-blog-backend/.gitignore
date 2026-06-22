@@ -5,7 +5,7 @@ node_modules/
 .env
 
 # System files
-.DS_Store
+.DS_Store/
 Thumbs.db
 
 # Log files (Agar project me logs bante hain toh)
